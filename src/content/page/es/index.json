@@ -1,5 +1,7 @@
 {
-    "metadata": {},
+    "metadata": {
+        "description": "\\U0001F387 Descubre Alkimia Charms - Joyería exquisita que transforma cada momento en un recuerdo preciado. Explora nuestra selección cuidadosamente curada de elegantes y celestiales tesoros, diseñados para inspirar y cautivar."
+    },
     "i18n": { "en": { "url": "/" } },
     "Hero": {
         "id": "inicio",
