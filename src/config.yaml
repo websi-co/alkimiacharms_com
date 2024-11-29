@@ -13,12 +13,11 @@ site:
         { text: 'Collection', href: '#collection' },
         { text: 'About', href: '#about' },
       ]
-      ctas: [
-        { text: 'Download', href: '#download' },
-      ]
+      ctas: []
     isSticky: true
     showToggleTheme: false
   footer: &footer
+    footNote: 'Alkimia Charms · All rights reserved.'
     navigation: &footerNavigation
       links: [
         { text: 'Services', href: '#' },
@@ -37,9 +36,7 @@ site:
             { text: 'Colección', href: '#coleccion' },
             { text: 'Acerca de', href: '#acerca-de' },
           ]
-          ctas: [
-            { text: 'Descargar', href: '#download' },
-          ]
+          ctas: []
       footer:
         <<: *footer
         navigation:
@@ -50,7 +47,7 @@ site:
             { text: 'Acerca de', href: '#' },
           ]
 
-  googleSiteVerificationId: orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M
+  googleSiteVerificationId:
 
 # Default SEO metadata
 metadata:

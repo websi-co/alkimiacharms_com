@@ -6,33 +6,34 @@ import ToggleMenu from '~/components/common/ToggleMenu.astro';
 import Button from '~/components/ui/Button.astro';
 
 import { getAsset } from '~/utils/permalinks';
-import type { CallToAction } from '~/types';
+// import type { CallToAction } from '~/types';
 
-interface Link {
-  text?: string;
-  href?: string;
-  ariaLabel?: string;
-  icon?: string;
-}
+// interface Link {
+//   text?: string;
+//   href?: string;
+//   ariaLabel?: string;
+//   icon?: string;
+// }
 
-interface MenuLink extends Link {
-  links?: Array<MenuLink>;
-}
+// interface MenuLink extends Link {
+//   links?: Array<MenuLink>;
+// }
 
-export interface Props {
-  id?: string;
-  links?: Array<MenuLink>;
-  actions?: Array<CallToAction>;
-  isSticky?: boolean;
-  isDark?: boolean;
-  isFullWidth?: boolean;
-  showToggleTheme?: boolean;
-  showRssFeed?: boolean;
-  position?: string;
-  currentLocale?: string;
-  currentPath?: string;
-  homeLink?: string;
-}
+// export interface Props {
+//   id?: string;
+//   links?: Array<MenuLink>;
+//   actions?: Array<CallToAction>;
+//   isSticky?: boolean;
+//   isDark?: boolean;
+//   isFullWidth?: boolean;
+//   showToggleTheme?: boolean;
+//   showRssFeed?: boolean;
+//   position?: string;
+//   currentLocale?: string;
+//   currentPath?: string;
+//   homeLink?: string;
+//   languageSwitcherData?: object;
+// }
 
 const {
   id = 'header',
@@ -46,7 +47,9 @@ const {
   position = 'center',
   currentPath,
   homeLink,
+  languageSwitcherData,
 } = Astro.props;
+
 ---
 
 <header
@@ -157,6 +160,18 @@ const {
             <span class="ml-4 rtl:ml-0 rtl:mr-4">
               {actions.map((btnProps) => (
                 <Button {...btnProps} class="ml-2 py-2.5 px-5.5 md:px-6 font-semibold shadow-none text-sm w-auto" />
+              ))}
+            </span>
+          ) : (
+            ''
+          )
+        }
+
+        {
+          languageSwitcherData?.length ? (
+            <span class="ml-4 rtl:ml-0 rtl:mr-4">
+              {languageSwitcherData.map((languageData) => (
+                <Button text={languageData?.label} href={languageData?.url} class="ml-2 py-2.5 px-5.5 md:px-6 font-semibold shadow-none text-sm w-auto" />
               ))}
             </span>
           ) : (
