@@ -1,0 +1,31 @@
+---
+import Button from './Button.astro';
+import Image from '~/components/common/Image.astro';
+
+const { src, alt='', href, target } = Astro.props;
+
+---
+
+{
+  href && (
+    <Button variant="link" href={href} target={target}>
+      <Image
+        class="mx-auto"
+        widths={[]}
+        sizes=""
+        loading="eager"
+        alt={alt}
+        src={src}
+      />
+    </Button>
+  ) || (
+    <Image
+      class="mx-auto"
+      widths={[]}
+      sizes=""
+      loading="eager"
+      alt={alt}
+      src={src}
+    />
+  )
+}

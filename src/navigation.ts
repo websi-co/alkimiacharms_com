@@ -1,25 +1,25 @@
 import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
 
-export const headerData = {
+export const headerData = (locale = '') => ({
   links: [
     {
       text: 'Homes',
       links: [
         {
           text: 'SaaS',
-          href: getPermalink('/homes/saas'),
+          href: getPermalink('/homes/saas', undefined, locale),
         },
         {
           text: 'Startup',
-          href: getPermalink('/homes/startup'),
+          href: getPermalink('/homes/startup', undefined, locale),
         },
         {
           text: 'Mobile App',
-          href: getPermalink('/homes/mobile-app'),
+          href: getPermalink('/homes/mobile-app', undefined, locale),
         },
         {
           text: 'Personal',
-          href: getPermalink('/homes/personal'),
+          href: getPermalink('/homes/personal', undefined, locale),
         },
       ],
     },
@@ -28,31 +28,31 @@ export const headerData = {
       links: [
         {
           text: 'Features (Anchor Link)',
-          href: getPermalink('/#features'),
+          href: getPermalink('/#features', undefined, locale),
         },
         {
           text: 'Services',
-          href: getPermalink('/services'),
+          href: getPermalink('/services', undefined, locale),
         },
         {
           text: 'Pricing',
-          href: getPermalink('/pricing'),
+          href: getPermalink('/pricing', undefined, locale),
         },
         {
           text: 'About us',
-          href: getPermalink('/about'),
+          href: getPermalink('/about', undefined, locale),
         },
         {
           text: 'Contact',
-          href: getPermalink('/contact'),
+          href: getPermalink('/contact', undefined, locale),
         },
         {
           text: 'Terms',
-          href: getPermalink('/terms'),
+          href: getPermalink('/terms', undefined, locale),
         },
         {
           text: 'Privacy policy',
-          href: getPermalink('/privacy'),
+          href: getPermalink('/privacy', undefined, locale),
         },
       ],
     },
@@ -61,27 +61,27 @@ export const headerData = {
       links: [
         {
           text: 'Lead Generation',
-          href: getPermalink('/landing/lead-generation'),
+          href: getPermalink('/landing/lead-generation', undefined, locale),
         },
         {
           text: 'Long-form Sales',
-          href: getPermalink('/landing/sales'),
+          href: getPermalink('/landing/sales', undefined, locale),
         },
         {
           text: 'Click-Through',
-          href: getPermalink('/landing/click-through'),
+          href: getPermalink('/landing/click-through', undefined, locale),
         },
         {
           text: 'Product Details (or Services)',
-          href: getPermalink('/landing/product'),
+          href: getPermalink('/landing/product', undefined, locale),
         },
         {
           text: 'Coming Soon or Pre-Launch',
-          href: getPermalink('/landing/pre-launch'),
+          href: getPermalink('/landing/pre-launch', undefined, locale),
         },
         {
           text: 'Subscription',
-          href: getPermalink('/landing/subscription'),
+          href: getPermalink('/landing/subscription', undefined, locale),
         },
       ],
     },
@@ -90,23 +90,23 @@ export const headerData = {
       links: [
         {
           text: 'Blog List',
-          href: getBlogPermalink(),
+          href: getBlogPermalink(locale),
         },
         {
           text: 'Article',
-          href: getPermalink('get-started-website-with-astro-tailwind-css', 'post'),
+          href: getPermalink('get-started-website-with-astro-tailwind-css', 'post', locale),
         },
         {
           text: 'Article (with MDX)',
-          href: getPermalink('markdown-elements-demo-post', 'post'),
+          href: getPermalink('markdown-elements-demo-post', 'post', locale),
         },
         {
           text: 'Category Page',
-          href: getPermalink('tutorials', 'category'),
+          href: getPermalink('tutorials', 'category', locale),
         },
         {
           text: 'Tag Page',
-          href: getPermalink('astro', 'tag'),
+          href: getPermalink('astro', 'tag', locale),
         },
       ],
     },
@@ -116,9 +116,9 @@ export const headerData = {
     },
   ],
   actions: [{ text: 'Download', href: 'https://github.com/onwidget/astrowind', target: '_blank' }],
-};
+});
 
-export const footerData = {
+export const footerData = (locale = '') => ({
   links: [
     {
       title: 'Product',
@@ -166,8 +166,8 @@ export const footerData = {
     },
   ],
   secondaryLinks: [
-    { text: 'Terms', href: getPermalink('/terms') },
-    { text: 'Privacy Policy', href: getPermalink('/privacy') },
+    { text: 'Terms', href: getPermalink('/terms', undefined, locale) },
+    { text: 'Privacy Policy', href: getPermalink('/privacy', undefined, locale) },
   ],
   socialLinks: [
     { ariaLabel: 'X', icon: 'tabler:brand-x', href: '#' },
@@ -180,4 +180,4 @@ export const footerData = {
     <img class="w-5 h-5 md:w-6 md:h-6 md:-mt-0.5 bg-cover mr-1.5 rtl:mr-0 rtl:ml-1.5 float-left rtl:float-right rounded-sm" src="https://onwidget.com/favicon/favicon-32x32.png" alt="onWidget logo" loading="lazy"></img>
     Made by <a class="text-blue-600 underline dark:text-muted" href="https://onwidget.com/"> onWidget</a> · All rights reserved.
   `,
-};
+});

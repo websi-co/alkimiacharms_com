@@ -1,0 +1,92 @@
+{
+    "metadata": {},
+    "i18n": {
+        "es": {
+            "url": "/es"
+        }
+    },
+    "Hero": {
+        "id": "home",
+        "tagline": "Wear the Magic",
+        "image": { "alt": "A woman showing her neck wearing an Energetic Jewelry" },
+        "actions": [
+            {
+                "href": "https://www.instagram.com/alkimiacharms/",
+                "src": "~/assets/images/instagram.svg",
+                "alt": "Instagram logo button pointing to Alkimia Charms' account"
+            }
+        ],
+        "subtitle": "Step into a world where elegance meets enchantment. At Alkimia Charms, we believe that every piece of jewelry tells a story, each charm a symbol of cherished moments and timeless beauty. Our exquisite collection, crafted with meticulous attention to detail, invites you to celebrate life’s magical moments."
+    },
+
+    "Features": {
+        "id": "collection",
+        "title": "Discover the Elegance of Alkimia Charms",
+        "subtitle": "Delve into the enchanting world of Alkimia Charms, where each piece is a testament to artistry, sophistication, and magical protection. Our exquisite collection of charms and jewelry is meticulously crafted not only to celebrate life's most treasured moments but also to offer a touch of enchantment and safeguarding against negative energies.<br />Explore our diverse range of products and let your style sparkle with the magic and protection of Alkimia Charms.✨",
+        "text": "Delve into the enchanting world of Alkimia Charms, where each piece is a testament to artistry, sophistication, and magical protection. Our exquisite collection of charms and jewelry is meticulously crafted not only to celebrate life's most treasured moments but also to offer a touch of enchantment and safeguarding against negative energies.<br />From radiant gemstones imbued with mystical properties to intricate designs that weave ancient symbols of protection, every charm tells a unique story and adds a touch of elegance to your daily style. Whether you’re searching for a thoughtful gift or a personal indulgence, Alkimia Charms offers timeless pieces that enhance any jewelry collection while providing a sense of magical protection.<br />Explore our diverse range of products and let your style sparkle with the magic and protection of Alkimia Charms.✨",
+
+        "columns": 4,
+
+        "items": [
+            {
+                "image": {
+                    "src": "~/assets/images/gallery/465892085_2257267648005414_2470186173931871790_n.jpg",
+                    "alt":"Elegant gold chain, with a delicate angel.",
+                    "href": "https://www.instagram.com/p/DCDAN6AgtymNggewVlUV8lp8S5327Atwu5c7CQ0/",
+                    "target": "_blank"
+                },
+                "description": "Add a celestial touch to your style with this elegant gold chain, featuring a delicate angel that will always accompany you."
+            },
+            {
+                "image": {
+                    "src": "~/assets/images/gallery/465821685_1802201467250960_3809812075632409897_n.jpg",
+                    "alt":"St. Benedict chain",
+                    "href": "https://www.instagram.com/p/DCCxQBGRucgG_cKhF525ium54b_qWzFhlmCOXo0/",
+                    "target": "_blank"
+                },
+                "description": "Protection and style in one piece. This St. Benedict chain is the perfect amulet for those seeking strength and faith."
+            },
+            {
+                "image": {
+                    "src": "~/assets/images/gallery/465940671_2640309342843420_6431610075663320077_n.jpg",
+                    "alt":"Golden heart necklace",
+                    "href": "https://www.instagram.com/p/DCCbzOKxHEHU2hWOHSRr9osqQVfviMalYlH8is0/",
+                    "target": "_blank"
+                },
+                "description": "A golden heart necklace to always keep what you love close."
+            },
+            {
+                "image": {
+                    "src": "~/assets/images/gallery/465822002_440657155395286_4793815348447905680_n.jpg",
+                    "alt":"Golden flower bracelet",
+                    "href": "https://www.instagram.com/p/DCCbRBFOpHS-vxSVZO_AuSAotMqpGY9sL-fbhE0/",
+                    "target": "_blank"
+                },
+                "description": "Show off this golden flower bracelet and carry a touch of nature and elegance with you."
+            }
+        ],
+
+        "cta": {
+            "title": "Discover More on Instagram",
+            "subtitle": "Explore the full magic of our collection on Instagram! Follow us for exclusive looks, new arrivals, and enchanting inspirations. Don't miss out on the beauty and elegance that awaits.",
+            "actions": [
+                {
+                    "variant": "link",
+                    "target": "_blank",
+                    "href": "https://www.instagram.com/alkimiacharms/",
+                    "image": {
+                        "src": "~/assets/images/instagram.svg",
+                        "alt": "Instagram logo button pointing to Alkimia Charms' account"
+                    }
+                }
+            ]
+        }
+    },
+
+    "About": {
+        "id": "about",
+        "tagline": "Enchanting Elegance",
+        "title": "Alkimia Charms",
+        "subtitle": "At Alkimia Charms, we blend artistry with magical protection to create timeless pieces that celebrate life's precious moments. Each charm and jewelry piece is meticulously crafted to add elegance to your style while providing a touch of enchantment and safeguarding against negative energies. Discover the magic and let your style sparkle with Alkimia Charms."
+    }
+}
