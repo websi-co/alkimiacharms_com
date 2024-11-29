@@ -1,18 +1,13 @@
 ---
 import Layout from '~/layouts/Layout.astro';
 import Header from '~/components/widgets/Header.astro';
-import Footer from '~/components/widgets/Footer.astro';
+import Footer from '~/components/widgets/FooterMin.astro';
 import Announcement from '~/components/widgets/Announcement.astro';
 
-import { headerData, footerData } from '~/navigation';
+const { currentPath, homeLink, metadata, site, languageSwitcherData } = Astro.props;
+const header = site?.header;
+const footer = site?.footer;
 
-import type { MetaData } from '~/types';
-
-export interface Props {
-  metadata?: MetaData;
-}
-
-const { metadata } = Astro.props;
 ---
 
 <Layout metadata={metadata}>
@@ -20,12 +15,21 @@ const { metadata } = Astro.props;
     <Announcement />
   </slot>
   <slot name="header">
-    <Header {...headerData} isSticky showRssFeed showToggleTheme />
+    <Header
+      languageSwitcherData={languageSwitcherData}
+      currentPath={currentPath}
+      homeLink={homeLink}
+      position={header?.navigation?.position}
+      links={header?.navigation?.links}
+      actions={header?.navigation?.ctas}
+      isSticky={header?.isSticky}
+      showToggleTheme={header?.showToggleTheme}
+    />
   </slot>
   <main>
     <slot />
   </main>
   <slot name="footer">
-    <Footer {...footerData} />
+    <Footer {...footer} classes={{ container: 'bg-[var(--aw-color-bg-alt)]' }} />
   </slot>
 </Layout>

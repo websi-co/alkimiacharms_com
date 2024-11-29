@@ -30,6 +30,18 @@ export interface I18NConfig {
   language: string;
   textDirection: string;
   dateFormatter?: Intl.DateTimeFormat;
+  defaultLocale: string;
+  locales: (string | {
+      path: string;
+      codes: [string, ...string[]];
+  })[];
+  routing: "manual" | {
+      prefixDefaultLocale: boolean;
+      redirectToDefaultLocale: boolean;
+      fallbackType: "redirect" | "rewrite";
+  };
+  fallback?: Record<string, string> | undefined;
+  domains?: Record<string, string> | undefined;
 }
 export interface AppBlogConfig {
   isEnabled: boolean;

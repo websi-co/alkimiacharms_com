@@ -2,7 +2,8 @@
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Headline from '~/components/ui/Headline.astro';
 import ItemGrid2 from '~/components/ui/ItemGrid2.astro';
-import type { Features as Props } from '~/types';
+import CallToActionActions from '~/components/widgets/CallToActionActions.astro';
+// import type { Features as Props } from '~/types';
 
 const {
   title = await Astro.slots.render('title'),
@@ -11,7 +12,7 @@ const {
   items = [],
   columns = 3,
   defaultIcon,
-
+  cta,
   id,
   isDark = false,
   classes = {},
@@ -35,4 +36,5 @@ const {
       ...((classes?.items as Record<string, never>) ?? {}),
     }}
   />
+  {cta && (<CallToActionActions {...cta} />)}
 </WidgetWrapper>

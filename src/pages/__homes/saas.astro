@@ -1,5 +1,5 @@
 ---
-import Layout from '~/layouts/PageLayout.astro';
+import Layout from '~/layouts/PageLayoutTemplate.astro';
 
 import Header from '~/components/widgets/Header.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
@@ -20,7 +20,7 @@ const metadata = {
 <Layout metadata={metadata}>
   <Fragment slot="header">
     <Header
-      {...headerData}
+      {...headerData()}
       actions={[
         {
           variant: 'secondary',

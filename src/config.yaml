@@ -1,22 +1,65 @@
 site:
-  name: AstroWind
-  site: 'https://astrowind.vercel.app'
+  name: Alkimia Charms
+  tagLine: Magical Creations, Timeless Elegance
+  site: 'https://alkimiacharms.com'
   base: '/'
+  logoV1: 'alkimia-logo-horizontal-127x52.svg'
   trailingSlash: false
+  header: &header
+    navigation: &headerNavigation
+      position: 'center'
+      links: [
+        { text: 'Home', href: '#home' },
+        { text: 'Collection', href: '#collection' },
+        { text: 'About', href: '#about' },
+      ]
+      ctas: []
+    isSticky: true
+    showToggleTheme: false
+  footer: &footer
+    footNote: 'Alkimia Charms · All rights reserved.'
+    navigation: &footerNavigation
+      links: [
+        { text: 'Services', href: '#' },
+        { text: 'Collection', href: '#' },
+        { text: 'About', href: '#' },
+      ]
+  i18n:
+    es:
+      tagLine: Creaciones Mágicas, Elegancia Eterna
+      header:
+        <<: *header
+        navigation:
+          <<: *headerNavigation
+          links: [
+            { text: 'Inicio', href: '#inicio' },
+            { text: 'Colección', href: '#coleccion' },
+            { text: 'Acerca de', href: '#acerca-de' },
+          ]
+          ctas: []
+      footer:
+        <<: *footer
+        navigation:
+          <<: *footerNavigation
+          links: [
+            { text: 'Inicio', href: '#' },
+            { text: 'Colección', href: '#' },
+            { text: 'Acerca de', href: '#' },
+          ]
 
-  googleSiteVerificationId: orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M
+  googleSiteVerificationId:
 
 # Default SEO metadata
 metadata:
   title:
-    default: AstroWind
-    template: '%s — AstroWind'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+    default: Alkimia Charms
+    template: '%s | Alkimia Charms'
+  description: "\U0001F387 Discover Alkimia Charms - Exquisite jewelry that transforms every moment into a cherished memory. Explore our curated selection of elegant, celestial treasures crafted to inspire and captivate."
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind
+    site_name: Alkimia Charms
     images:
       - url: '~/assets/images/default.png'
         width: 1200
@@ -26,14 +69,23 @@ metadata:
     handle: '@onwidget'
     site: '@onwidget'
     cardType: summary_large_image
+  instagram:
+    handle: '@alkimiacharms'
+    site: 'https://www.instagram.com/alkimiacharms/'
 
 i18n:
-  language: en
-  textDirection: ltr
+  defaultLocale: en
+  locales: [en, es]
+  labels: [
+    { en: English },
+    { es: Español },
+  ]
+  routing:
+    prefixDefaultLocale: false
 
 apps:
   blog:
-    isEnabled: true
+    isEnabled: false
     postsPerPage: 6
 
     post:
@@ -69,4 +121,4 @@ analytics:
       id: null # or "G-XXXXXXXXXX"
 
 ui:
-  theme: 'system' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
+  theme: 'light:only' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"

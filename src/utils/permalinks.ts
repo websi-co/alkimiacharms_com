@@ -2,9 +2,9 @@ import slugify from 'limax';
 
 import { SITE, APP_BLOG } from 'astrowind:config';
 
-import { trim } from '~/utils/utils';
+import { getLocalePathname, trim } from '~/utils/utils';
 
-export const trimSlash = (s: string) => trim(trim(s, '/'));
+export const trimSlash = (s: string | undefined) => trim(trim(s, '/'));
 const createPath = (...params: string[]) => {
   const paths = params
     .map((el) => trimSlash(el))
@@ -39,7 +39,7 @@ export const getCanonical = (path = ''): string | URL => {
 };
 
 /** */
-export const getPermalink = (slug = '', type = 'page'): string => {
+export const getPermalink = (slug = '', type = 'page', locale): string => {
   let permalink: string;
 
   if (
@@ -52,13 +52,15 @@ export const getPermalink = (slug = '', type = 'page'): string => {
     return slug;
   }
 
+  locale = getLocalePathname(locale);
+
   switch (type) {
     case 'home':
-      permalink = getHomePermalink();
+      permalink = getHomePermalink(locale);
       break;
 
     case 'blog':
-      permalink = getBlogPermalink();
+      permalink = getBlogPermalink(locale);
       break;
 
     case 'asset':
@@ -66,20 +68,20 @@ export const getPermalink = (slug = '', type = 'page'): string => {
       break;
 
     case 'category':
-      permalink = createPath(CATEGORY_BASE, trimSlash(slug));
+      permalink = createPath(locale, CATEGORY_BASE, trimSlash(slug));
       break;
 
     case 'tag':
-      permalink = createPath(TAG_BASE, trimSlash(slug));
+      permalink = createPath(locale, TAG_BASE, trimSlash(slug));
       break;
 
     case 'post':
-      permalink = createPath(trimSlash(slug));
+      permalink = createPath(locale, trimSlash(slug));
       break;
 
     case 'page':
     default:
-      permalink = createPath(slug);
+      permalink = createPath(locale, slug);
       break;
   }
 
@@ -87,10 +89,10 @@ export const getPermalink = (slug = '', type = 'page'): string => {
 };
 
 /** */
-export const getHomePermalink = (): string => getPermalink('/');
+export const getHomePermalink = (locale?: string): string => getPermalink(BASE_PATHNAME, undefined, locale);
 
 /** */
-export const getBlogPermalink = (): string => getPermalink(BLOG_BASE);
+export const getBlogPermalink = (locale?: string): string => getPermalink(BLOG_BASE, undefined, locale);
 
 /** */
 export const getAsset = (path: string): string =>

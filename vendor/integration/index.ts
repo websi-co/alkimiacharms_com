@@ -31,6 +31,7 @@ export default ({ config: _themeConfig = 'src/config.yaml' } = {}): AstroIntegra
         updateConfig({
           site: SITE.site,
           base: SITE.base,
+          i18n: I18N,
 
           trailingSlash: SITE.trailingSlash ? 'always' : 'never',
 

@@ -1,0 +1,88 @@
+---
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import About from '~/components/widgets/About.astro';
+
+import Button from '~/components/ui/Button.astro';
+import Image from '~/components/common/Image.astro';
+
+const { pageContent } = Astro.props;
+
+import heroImage from '~/assets/images/home-hero-1.webp';
+import featuresBg from '~/assets/images/home-features-bg.jpg';
+// console.log(pageContent);
+
+---
+<>
+  <!-- Hero2 Widget ******************* -->
+
+  {pageContent?.Hero && <Hero2
+    id={pageContent.Hero?.id}
+    tagline={pageContent.Hero?.tagline}
+    image={{
+      src: heroImage,
+      ...pageContent.Hero?.image,
+    }}
+    width={400}
+    height={600}
+  >
+    <Fragment slot="title">
+      <span class="text-accent dark:text-white highlight">{pageContent?.site?.name}</span> <br /> {pageContent?.site?.tagLine}
+    </Fragment>
+
+    {pageContent.Hero?.subtitle && <Fragment slot="subtitle">{pageContent.Hero.subtitle}</Fragment>}
+
+    <div slot="actions" class="flex max-w-sm gap-4">
+      {Array.isArray(pageContent.Hero?.actions) && pageContent.Hero?.actions.map((action) => (
+        <Button variant="secondary" href={action.href} target="_blank">
+          <Image src={action.src} alt={action.alt} width={200} />
+        </Button>
+      ))}
+    </div>
+  </Hero2>}
+
+  <!-- About Widget ************** -->
+
+  <Features2
+    id={pageContent.Features?.id}
+    isDark
+    classes={{
+      container: 'min-h-screen w-full',
+      headline: { container: 'max-w-3xl p-4 bg-[rgba(0,0,0,0.5)]' },
+      items: { panel: 'rounded-lg shadow-[0_4px_30px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur border border-[var(--aw-color-accent)] bg-white dark:bg-[var(--aw-color-accent)] p-2' },
+    }}
+    columns={pageContent.Features?.columns}
+    title={pageContent.Features?.title}
+    subtitle={pageContent.Features?.subtitle}
+    items={pageContent.Features?.items || []}
+    cta={pageContent.Features?.cta}
+  >
+    <Fragment slot="bg">
+      <div class="absolute h-full w-full inset-0 bg-[rgba(0,0,0,0.5)] dark:bg-transparent"></div>
+      <Image
+        class="mx-auto h-full w-full"
+        widths={[]}
+        sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
+        loading="eager"
+        alt=""
+        src={featuresBg}
+      />
+    </Fragment>
+  </Features2>
+
+  <About
+    id={pageContent.About?.id}
+    title={pageContent.About?.title}
+    subtitle={pageContent.About?.subtitle}
+    tagline={pageContent.About?.tagline}
+    image={{
+      src: '~/assets/images/logo/alkimia-logo-full.png',
+      alt: 'Alkimia Charms Full Logo',
+    }}
+    classes={{ container: 'lg:py-24' }}
+  >
+    <Fragment slot="bg">
+      <div class="absolute w-full inset-0 bg-[var(--aw-color-bg-alt)]"></div>
+    </Fragment>
+  </About>
+</>

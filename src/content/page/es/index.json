@@ -1,0 +1,88 @@
+{
+    "metadata": {},
+    "i18n": { "en": { "url": "/" } },
+    "Hero": {
+        "id": "inicio",
+        "tagline": "Lleva la magia",
+        "image": { "alt": "Una mujer mostrando su cuello luciendo una Joya Energética" },
+        "actions": [
+            {
+                "href": "https://www.instagram.com/alkimiacharms/",
+                "src": "~/assets/images/instagram.svg",
+                "alt": "Botón del logotipo de Instagram que apunta a la cuenta de Alkimia Charms"
+            }
+        ],
+        "subtitle": "Entra en un mundo donde la elegancia se encuentra con el encanto. En Alkimia Charms, creemos que cada pieza de joyería cuenta una historia, cada amuleto es un símbolo de momentos preciados y belleza atemporal. Nuestra exquisita colección, elaborada con meticulosa atención al detalle, te invita a celebrar los momentos mágicos de la vida."
+    },
+
+    "Features": {
+        "id": "coleccion",
+        "title": "Descubre la Elegancia de Alkimia Charms",
+        "subtitle": "Adéntrate en el encantador mundo de Alkimia Charms, donde cada pieza es un testimonio de arte, sofisticación y protección mágica. Nuestra exquisita colección de dijes y joyas está meticulosamente elaborada no solo para celebrar los momentos más preciados de la vida, sino también para ofrecer un toque de encanto y protección contra energías negativas.<br />Explora nuestra diversa gama de productos y deja que tu estilo brille con la magia y protección de Alkimia Charms.✨",
+        "text": "Adéntrate en el encantador mundo de Alkimia Charms, donde cada pieza es un testimonio de arte, sofisticación y protección mágica. Nuestra exquisita colección de dijes y joyas está meticulosamente elaborada no solo para celebrar los momentos más preciados de la vida, sino también para ofrecer un toque de encanto y protección contra energías negativas.<br />Desde piedras preciosas radiantes imbuidas con propiedades místicas hasta diseños intrincados que entrelazan antiguos símbolos de protección, cada dije cuenta una historia única y añade un toque de elegancia a tu estilo diario. Ya sea que busques un regalo considerado o un capricho personal, Alkimia Charms ofrece piezas atemporales que realzan cualquier colección de joyas mientras proporcionan una sensación de protección mágica.<br />Explora nuestra diversa gama de productos y deja que tu estilo brille con la magia y protección de Alkimia Charms.✨",
+
+        "columns": 4,
+
+        "items": [
+            {
+                "image": {
+                    "src": "~/assets/images/gallery/465892085_2257267648005414_2470186173931871790_n.jpg",
+                    "alt":"Elegante cadena dorada, con un delicado ángel",
+                    "href": "https://www.instagram.com/p/DCDAN6AgtymNggewVlUV8lp8S5327Atwu5c7CQ0/",
+                    "target": "_blank"
+                },
+                "description": "Añade un toque celestial a tu estilo con esta elegante cadena dorada, con un delicado ángel que te acompañará siempre."
+            },
+            {
+                "image": {
+                    "src": "~/assets/images/gallery/465821685_1802201467250960_3809812075632409897_n.jpg",
+                    "alt":"Cadena de San Benito",
+                    "href": "https://www.instagram.com/p/DCCxQBGRucgG_cKhF525ium54b_qWzFhlmCOXo0/",
+                    "target": "_blank"
+                },
+                "description": "Protección y estilo en una sola pieza. Esta cadena de San Benito es el amuleto perfecto para quienes buscan fuerza y fe."
+            },
+            {
+                "image": {
+                    "src": "~/assets/images/gallery/465940671_2640309342843420_6431610075663320077_n.jpg",
+                    "alt":"Collar de corazones dorados",
+                    "href": "https://www.instagram.com/p/DCCbzOKxHEHU2hWOHSRr9osqQVfviMalYlH8is0/",
+                    "target": "_blank"
+                },
+                "description": "Un collar de corazones dorados para llevar siempre cerca aquello que amas."
+            },
+            {
+                "image": {
+                    "src": "~/assets/images/gallery/465822002_440657155395286_4793815348447905680_n.jpg",
+                    "alt":"Pulsera de flores doradas",
+                    "href": "https://www.instagram.com/p/DCCbRBFOpHS-vxSVZO_AuSAotMqpGY9sL-fbhE0/",
+                    "target": "_blank"
+                },
+                "description": "Luce esta pulsera de flores doradas y lleva contigo un toque de naturaleza y elegancia."
+            }
+        ],
+
+        "cta": {
+            "title": "Descubre Más en Instagram",
+            "subtitle": "¡Explora toda la magia de nuestra colección en Instagram! Síguenos para conocer looks exclusivos, nuevas llegadas e inspiraciones encantadoras. No te pierdas la belleza y elegancia que te espera.",
+            "actions": [
+                {
+                    "variant": "link",
+                    "target": "_blank",
+                    "href": "https://www.instagram.com/alkimiacharms/",
+                    "image": {
+                        "src": "~/assets/images/instagram.svg",
+                        "alt": "Botón del logotipo de Instagram que apunta a la cuenta de Alkimia Charms"
+                    }
+                }
+            ]
+        }
+    },
+
+    "About": {
+        "id": "acerca-de",
+        "tagline": "Elegancia Mágica Redefinida",
+        "title": "Alkimia Charms",
+        "subtitle": "En Alkimia Charms, fusionamos arte con protección mágica para crear piezas atemporales que celebran los momentos más preciosos de la vida. Cada dije y pieza de joyería está meticulosamente elaborada para añadir elegancia a tu estilo mientras proporciona un toque de encantamiento y protección contra energías negativas. Descubre la magia y deja que tu estilo brille con Alkimia Charms."
+    }
+}

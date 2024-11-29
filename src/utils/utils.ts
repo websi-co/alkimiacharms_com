@@ -1,4 +1,6 @@
-import { I18N } from 'astrowind:config';
+import { getEntry } from 'astro:content';
+import { getRelativeLocaleUrlList } from 'astro:i18n';
+import { I18N, SITE } from 'astrowind:config';
 
 export const formatter: Intl.DateTimeFormat = new Intl.DateTimeFormat(I18N?.language, {
   year: 'numeric',
@@ -49,4 +51,65 @@ export const toUiAmount = (amount: number) => {
   }
 
   return value;
+};
+
+export const getLocalePathname = (locale) => {
+  const relativeLocaleList = getRelativeLocaleUrlList() || [];
+  return relativeLocaleList.some(l => l.includes(locale)) ? locale : undefined;
+};
+
+export const getCurrentPath = (url) =>
+  `/${trim(trim(new URL(url).pathname, '/'))}`;
+
+export const getSiteInfo = (locale: string) => {
+  const { i18n, ...info } = SITE;
+
+  return { ...info, ...(i18n[locale] || {}) };
+};
+
+export const fetchPageContent = async (page: string, locale: string) => {
+  const relativeLocaleList = getRelativeLocaleUrlList() || [];
+  const contentLocale = relativeLocaleList.some(l => l.includes(locale)) ? `${locale}/` : '';
+    
+  const pageContentLocale = await getEntry('page', contentLocale + page);
+
+  return pageContentLocale?.data || {};
+};
+
+export const getPageData = async (currentLocale, pageName, url) => {
+  const currentPath = getCurrentPath(url);
+  const siteInfo = getSiteInfo(currentLocale);
+  const { i18n: pageI18n, ...prePageContent } = await fetchPageContent(pageName, currentLocale);
+  const pageContent = { site: siteInfo, ...prePageContent };
+  const languageSwitcherData = I18N?.locales?.map((locale) => {
+    if (locale !== currentLocale) {
+      return {
+        label: I18N?.labels.find(l => l[locale])[locale],
+        url: pageI18n[locale]?.url || currentPath,
+      };
+    }
+  }).filter(Boolean);
+
+  const metadata = {
+      ...pageContent?.metadata,
+      title: pageContent?.metadata?.title || siteInfo?.tagLine,
+  };
+
+  const layoutProps = {
+      currentPath,
+      languageSwitcherData,
+      metadata,
+      site: siteInfo,
+  };
+
+  const pageProps = {
+      currentPath,
+      metadata,
+      pageContent,
+      currentLocale,
+      languageSwitcherData,
+      pageName,
+  };
+
+  return { layoutProps, pageProps };
 };
